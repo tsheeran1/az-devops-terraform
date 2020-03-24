@@ -1,6 +1,12 @@
 # Define Terraform provider
 terraform {
   required_version = ">= 0.12"
+  backend "azurerm" {
+    resource_group_name   = "tsheeran-tfstate-rg"
+    storage_account_name  = "tsheeran685631be5a22a33"
+    container_name        = "core-tfstate"
+    key                   = "network-example.tfstate"
+  }
 }
 # Configure the Azure provider
 provider "azurerm" { 
